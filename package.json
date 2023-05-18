@@ -3,7 +3,7 @@
     "@elastic/elasticsearch": "7.17",
     "dotenv": "^16.0.3"
   },
-  "name": "laddav-es-nodejs",
+  "name": "ppcs-nodejs-es",
   "version": "1.0.0",
   "main": "work.js",
   "scripts": {

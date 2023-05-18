@@ -18,7 +18,8 @@ async function run () {
         match: {
           webshopId: 590
         }
-      }
+      },
+      size: 10000
     }
   })
 
