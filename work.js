@@ -207,8 +207,27 @@ async function run () {
     }
   })
   
-  console.log(body.aggregations.f.by_offer)
-  //stats.stat
+  body.aggregations.f.by_offer.buckets.forEach(element => {
+    var offerDatas = element.key.split("; offerId: ");
+
+    console.log(offerDatas[0]);
+    console.log(offerDatas[1]);
+    console.log(element.avg_clickRatio.value);
+    console.log(element.avg_cpc.value);
+    console.log(element.avg_ROAS.value);
+    console.log(element.avg_CPA.value);
+    console.log(element.stats.stat.sum_conversions.value);
+    console.log(element.stats.stat.sum_conversionValues.value);
+    console.log(element.stats.stat.sum_impressions.value);
+    console.log(element.stats.stat.sum_credit.value);
+    console.log(element.stats.stat.sum_cost.value);
+    console.log(element.stats.stat.sum_clicks.value);
+    console.log(element.stats.stat.sum_olcsobbatCredit.value);
+    console.log(element.stats.stat.sum_olcsobbatCt.value);
+
+  });
+
+  //console.log(body.aggregations.f.by_offer)
 }
 
 run().catch(console.log)
